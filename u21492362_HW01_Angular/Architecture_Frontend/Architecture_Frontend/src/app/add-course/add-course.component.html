@@ -1,0 +1,21 @@
+<h1>Add Course </h1>
+<div class="container">
+    <form >
+        <div class="container">
+            <form [formGroup]="courseform" (ngSubmit)="save()">
+                <label for="name" style="width: 100px; text-align: left ;">Name: </label>
+                <input type="text"  #name  CourseId="name" name="name"
+                    formControlName="name"  style="width: 500px; "><br><br>
+                <label for="duration" style="width: 100px; text-align: left ;">Duration: </label>
+                <input type="text"  #duration  CourseId="duration" name="duration"
+                    formControlName="duration" style="width: 500px; "><br><br>
+                <label for="description" style="width: 100px; text-align: left ;">Description: </label>
+                <input type="text"  #description  CourseId="description" name="description"
+                    formControlName="description" style="width: 500px; "><br><br>
+                <div class="btn-toolbar">
+                    <button [disabled]="courseform.invalid" class="btn btn-primary" type="submit">
+                        {{CourseId==0 || CourseId==null ?'Save':'Update'}}</button>
+                        <button type="button" class="btn btn-warning"  style="width: 150px;"><a routerLink="/courses"> Cancel </a></button>
+                </div>
+    </form>
+</div>

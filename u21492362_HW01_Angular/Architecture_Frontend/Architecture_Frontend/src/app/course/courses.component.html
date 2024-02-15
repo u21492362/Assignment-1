@@ -1,0 +1,27 @@
+
+<div class="container">  
+   
+    <table class="table table-hover" >  
+      <thead class="thead-dark">
+        <tr ngclass="btn-primary">  
+          <th class="tbl2">Name</th>  
+          <th class="tbl2">Duration</th>  
+          <th class="tbl2">Description</th>  
+          <th></th>
+          <th></th>
+        </tr>  
+      </thead>
+        <tr *ngFor="let course of courses ">  
+          <td class="tbl2">{{course.name}}</td>  
+          <td class="tbl2">{{course.duration }}</td>  
+          <td class="tbl2">{{course.description}}</td>  
+          <td class="tbl2">  
+            <button type="button" class="btn btn-info" (click)="EditCourse(course.courseId )"> Edit</button>  
+          </td>  
+          <td class="tbl2">  
+            <button type="button" class="btn btn-danger" (click)="DeleteCourse(course.courseId )">Delete</button>  
+          </td>  
+        </tr>  
+
+      </table> 
+</div>  

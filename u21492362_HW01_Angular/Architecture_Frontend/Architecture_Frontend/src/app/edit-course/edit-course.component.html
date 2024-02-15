@@ -1,0 +1,26 @@
+<h1>Edit course </h1>
+<div class="container">
+<form [formGroup]="editform" autocomplete="off" (ngSubmit)="save()">
+
+    <label for="name" style="width: 100px; text-align: left ;">Name: </label>
+    <input type="text"  #name [ngClass]="{'form-control': true, 'is-invalid': editform.get('name')?.invalid &&
+    (editform.get('name')?.dirty || editform.get('name')?.touched)}" CourseId="name" name="name"  formControlName="name" 
+    style="width: 500px; "><br><br>
+  
+    <label for="duration" style="width: 100px; text-align: left ;">Duration: </label>
+    <input type="text"  #duration [ngClass]="{'form-control': true, 'is-invalid': editform.get('duration')?.invalid &&
+    (editform.get('duration')?.dirty || editform.get('duration')?.touched)}" CourseId="duration" name="duration"
+    formControlName="duration" style="width: 500px; "><br><br>
+    
+    <label for="description" style="width: 100px; text-align: left ;">Description: </label>
+    <input type="text" #description [ngClass]="{'form-control': true, 'is-invalid': editform.get('description')?.invalid &&
+    (editform.get('description')?.dirty || editform.get('description')?.touched)}"  ourseId="description" name="description"
+    formControlName="description" style="width: 500px; "><br><br>
+
+    <div class="btn-toolbar">
+          <button class="btn btn-primary" type="submit" [disabled]="!editform.valid">
+                        {{CourseId==0 || CourseId==null ?'Save':'Update'}}</button>
+                        <button type="button" class="btn btn-warning"  style="width: 150px;"><a routerLink="/courses"> Cancel </a></button>
+    </div>
+  </form>
+</div>
